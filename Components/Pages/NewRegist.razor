@@ -1,3 +1,23 @@
-@page "/nuevo/registro"
+@page "/Register/nuevo"
+@inject NavigationManager NavMan
+@rendermode InteractiveServer
 
 <PageTitle>Registrando...</PageTitle>
+
+<center>
+<h3>Introduzca los datos del accidente.</h3>
+<i>
+<p>(Fecha, descripción del accidente, costo, n. de muertos, n. de heridos y vehículos involucrados)<p>
+</i>
+</center>
+
+
+@code{
+
+    private Register register = new Register();
+
+    private void GuardarRegistro(){
+
+        NavMan.NavigateTo("register");
+    }
+}
