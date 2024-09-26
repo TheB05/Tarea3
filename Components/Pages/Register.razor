@@ -1,0 +1,33 @@
+@page "/Register"
+@inject NavigationManager NavMan
+@rendermode InteractiveServer
+
+<PageTitle>Registrar</PageTitle>
+
+<center>
+<h3>Accidentes registrados</h3>
+
+<div class = "text-end">
+<center>
+
+    <button class = "btn btn-primary" @onclick = "N_Registro">Registrar accidente</button>
+
+</center>
+</div>
+
+
+
+
+@code{
+
+    private void N_Registro(){
+
+        NavMan.NavigateTo("nuevo/registro");
+    }
+}
+
+
+
+
+
+</center>
