@@ -7,17 +7,38 @@
 <center>
 <h3>Introduzca los datos del accidente.</h3>
 <i>
-<p>(Fecha, descripción del accidente, costo, n. de muertos, n. de heridos y vehículos involucrados)<p>
+<p>(Fecha, descripción del accidente, costo, n. de muertos, n. de heridos y vehículos involucrados)</p>
 </i>
 </center>
 
+<EditForm Model = "@Register" OnValidSubmit = "@GuardarRegistro">
+    <DataAnnotationsValidator />
+
+    <div class = "mb-3">
+        <label for = "Fecha" class = "form-label">Fecha</label>
+        <InputDate id = "Fecha" class = "form-control" @bind-Value = "@Register.Fecha" />
+        <ValidationMessage For = "@(() => Register.Fecha)" />
+    </div>
+
+    <div class = "mb-3">
+        <label for = "Descripcion" class = "form-label">Descripción</label>
+        <InputText id = "Descripcion" class = "form-control" @bind-Value = "@Register.Descripcion" />
+        <ValidationMessage For = "@(() => Register.Descripcion)" />
+    </div>
+
+    <div class = "text-center">
+
+        <button type = "submit" class = "btn btn-success">Guardar datos</button>
+    </div>
+
+</EditForm>
 
 @code{
 
-    private Register register = new Register();
+    private Reporte Register = new Reporte();
 
     private void GuardarRegistro(){
 
-        NavMan.NavigateTo("register");
+        NavMan.NavigateTo("Register");
     }
 }
