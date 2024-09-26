@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+dM1E4Xt7+Z8Rdn7LpGQ+0vKU3UDvfLZfjlEIjNHgVI=",
+  "Hash": "FIfEh83na7mkMGXcWFONrT84CeXnY/ESwzv5I1stWjM=",
   "Source": "Tarea3",
   "BasePath": "_content/Tarea3",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Web\\Tarea_Web3\\Tarea3\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Tarea3.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\advertencia.png",
+      "SourceId": "Tarea3",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\",
+      "BasePath": "_content/Tarea3",
+      "RelativePath": "advertencia.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\advertencia.png"
     },
     {
       "Identity": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\app.css",
@@ -129,6 +148,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\images\\advertencia.png",
+      "SourceId": "Tarea3",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\",
+      "BasePath": "_content/Tarea3",
+      "RelativePath": "images/advertencia.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\advertencia.png"
+    },
+    {
+      "Identity": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\images\\peligro.png",
+      "SourceId": "Tarea3",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\",
+      "BasePath": "_content/Tarea3",
+      "RelativePath": "images/peligro.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\peligro.png"
     }
   ]
 }

@@ -27,3 +27,4 @@ C:\Web\Tarea_Web3\Tarea3\obj\Debug\net8.0\refint\Tarea3.dll
 C:\Web\Tarea_Web3\Tarea3\obj\Debug\net8.0\Tarea3.pdb
 C:\Web\Tarea_Web3\Tarea3\obj\Debug\net8.0\Tarea3.genruntimeconfig.cache
 C:\Web\Tarea_Web3\Tarea3\obj\Debug\net8.0\ref\Tarea3.dll
+C:\Web\Tarea_Web3\Tarea3\obj\Debug\net8.0\Tarea3.sourcelink.json

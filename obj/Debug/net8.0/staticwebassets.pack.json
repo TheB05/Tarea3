@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Tarea3.bundle.scp.css"
     },
     {
+      "Id": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\advertencia.png",
+      "PackagePath": "staticwebassets\\advertencia.png"
+    },
+    {
       "Id": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
@@ -19,6 +23,14 @@
     {
       "Id": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\images\\advertencia.png",
+      "PackagePath": "staticwebassets\\images\\advertencia.png"
+    },
+    {
+      "Id": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\images\\peligro.png",
+      "PackagePath": "staticwebassets\\images\\peligro.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Tarea3.Microsoft.AspNetCore.StaticWebAssets.props",
