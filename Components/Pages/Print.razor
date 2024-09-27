@@ -3,12 +3,33 @@
 @using System.Text.Json
 @inject NavigationManager NavMan
 @rendermode InteractiveServer
+@layout PrintLayout
 
 <PageTitle>Imprimiendo...</PageTitle>
 
 <center>
 <h3>Imprimir el accidente</h3>
 </center>
+
+<div class = "mb-3">
+
+    Fecha del accidente: @report.Fecha
+</div>
+
+<br>
+
+<div>
+
+    <b>
+        Descripción del accidente:</b> @report.Descripcion
+</div>
+
+<div>
+
+    <b>Costo estimado:</b>
+
+    <LabelMoney Valor = "@report.CostoEstimado" />
+</div>
 
 @code{
 
@@ -46,6 +67,8 @@
                 StateHasChanged();
 
                 await JSx.InvokeVoidAsync("window.print");
+
+                await JSx.InvokeVoidAsync("window.close");
           }
           else{
 
