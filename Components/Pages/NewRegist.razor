@@ -1,6 +1,8 @@
 @page "/Register/nuevo"
 @inject NavigationManager NavMan
+@inject IJSRuntime JSx
 @rendermode InteractiveServer
+@using System.Text.Json
 
 <PageTitle>Registrando...</PageTitle>
 
@@ -22,7 +24,7 @@
 
     <div class = "mb-3">
         <label for = "Descripcion" class = "form-label">Descripción</label>
-        <InputText id = "Descripcion" class = "form-control" @bind-Value = "@Register.Descripcion" />
+        <InputTextArea id = "Descripcion" class = "form-control" @bind-Value = "@Register.Descripcion" />
         <ValidationMessage For = "@(() => Register.Descripcion)" />
     </div>
 
@@ -37,8 +39,31 @@
 
     private Reporte Register = new Reporte();
 
+    List<Reporte> Registers = new List<Reporte>();
+
     private void GuardarRegistro(){
 
+        Registers.Add(Register);
+
+        //Código para almacenar en Local Storage (MUY importante)
+        JSx.InvokeVoidAsync("localStorage.setItem", "Registers", JsonSerializer.Serialize(Registers));
+
         NavMan.NavigateTo("Register");
+    }
+
+    //Cargar datos existentes del localStorage.
+    protected override async Task OnAfterRenderAsync(bool firstRender){
+
+        if (firstRender){
+
+            //Accede al localStorage.
+            var Jsonregisters = await JSx.InvokeAsync<string>("localStorage.getItem", "Registers");
+
+            if (Jsonregisters != null){
+
+                Registers = JsonSerializer.Deserialize<List<Reporte>>(Jsonregisters);
+                StateHasChanged();
+            }
+        }
     }
 }

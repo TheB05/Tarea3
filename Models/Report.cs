@@ -5,6 +5,7 @@ class Reporte{
 
     public string ID = Guid.NewGuid().ToString();
 
+    [Required (ErrorMessage = "Necesita introducir una fecha.")]
     public DateTime Fecha { get; set; } = DateTime.Now;
 
     [Required (ErrorMessage = "Necesita introducir una descripción.")]
