@@ -1,4 +1,5 @@
 @page "/Register/nuevo"
+@page "/Register/edit/{ID}"
 @inject NavigationManager NavMan
 @inject IJSRuntime JSx
 @rendermode InteractiveServer
@@ -37,13 +38,27 @@
 
 @code{
 
+    [Parameter]
+    public string ID { get; set; } = null;
+
     private Reporte Register = new Reporte();
 
     List<Reporte> Registers = new List<Reporte>();
 
     private void GuardarRegistro(){
 
-        Registers.Add(Register);
+        if(string.IsNullOrEmpty(Register.ID)){
+
+            Register.ID = Guid.NewGuid().ToString();
+            Registers.Add(Register);
+        }
+        else{
+
+            var index = Registers.FindIndex(x => x.ID == Register.ID);
+            Registers[index] = Register;
+        }
+
+        //Registers.Add(Register);
 
         //Código para almacenar en Local Storage (MUY importante)
         JSx.InvokeVoidAsync("localStorage.setItem", "Registers", JsonSerializer.Serialize(Registers));
@@ -62,6 +77,11 @@
             if (Jsonregisters != null){
 
                 Registers = JsonSerializer.Deserialize<List<Reporte>>(Jsonregisters);
+
+                    if(ID != null){
+
+                        Register = Registers.FirstOrDefault(r => r.ID == ID)?? new Reporte();
+                    }
                 StateHasChanged();
             }
         }

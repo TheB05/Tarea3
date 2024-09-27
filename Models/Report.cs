@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 class Reporte{
 
-    public string ID = Guid.NewGuid().ToString();
+    public string ID { get; set; } = string.Empty;
 
     [Required (ErrorMessage = "Necesita introducir una fecha.")]
     public DateTime Fecha { get; set; } = DateTime.Now;
