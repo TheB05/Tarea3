@@ -9,7 +9,7 @@
 <center>
 <h3>Accidentes registrados</h3>
 
-<table class = "table table-hover table-bordered">
+<table class = "table table-hover table-bordered mb-4">
     <thead>
         <tr>
             <th>Fecha</th>
@@ -23,12 +23,15 @@
 
             <tr>
                 <td>@Register.Fecha</td>
-                <td>@Register.Descripcion</td>
+                <td>
+                    @((Register.Descripcion.Length > 90) ? @Register.Descripcion.Substring(0, 50) + "..." : Register.Descripcion)
+                </td>
                 <td><LabelMoney Valor = "Register.CostoEstimado" />
                 </td>
                 <td>
                     <button @onclick = "()=> EditarFila(Register)" class = "btn btn-info btn-sm">Editar</button>
                     <button @onclick = "()=> EliminarFila(Register)" class = "btn btn-danger btn-sm">Borrar</button>
+                    <button @onclick = "()=> ImprimirAc(Register)" class = "btn btn-success btn-sm">Imprimir</button>
                 </td>
             </tr>
         }
@@ -49,6 +52,11 @@
 @code{
 
     List<Reporte> Registers = new List<Reporte>();
+
+    private void ImprimirAc(Reporte Register){
+
+         JSx.InvokeVoidAsync("window.open", "Register/Imprimir/" + RRegister/Imprimir/egister.ID, "_blank");
+    }
 
     private void N_Registro(){
 

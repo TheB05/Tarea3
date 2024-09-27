@@ -1,0 +1,57 @@
+@page "/Register/Imprimir/{ID}"
+@inject IJSRuntime JSx
+@using System.Text.Json
+@inject NavigationManager NavMan
+@rendermode InteractiveServer
+
+<PageTitle>Imprimiendo...</PageTitle>
+
+<center>
+<h3>Imprimir el accidente</h3>
+</center>
+
+@code{
+
+    [Parameter]
+    public string ID { get; set; }
+
+    Reporte report = new Reporte();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender){
+
+        if (firstRender){
+
+            var Jsonregisters = await JSx.InvokeAsync<string>("localStorage.getItem", "Registers");
+
+            if (Jsonregisters != null){
+
+            var Registers = JsonSerializer.Deserialize<List<Reporte>>(Jsonregisters);
+
+            foreach (var item in Registers){
+
+                if (item.ID == ID){
+
+                    report = item;
+                    break;
+                }
+            }
+
+            if (report.ID == null || report.ID.Length < 5){
+    
+                await JSx.InvokeVoidAsync("alert", "No se encuentra el accidente.");
+                NavMan.NavigateTo("/Register");
+
+            }
+
+                StateHasChanged();
+
+                await JSx.InvokeVoidAsync("window.print");
+          }
+          else{
+
+            await JSx.InvokeVoidAsync("alert", "No se encuentra el accidente.");
+            NavMan.NavigateTo("/Register");
+          }
+        }
+    }
+}
