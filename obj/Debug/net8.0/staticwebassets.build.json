@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FIfEh83na7mkMGXcWFONrT84CeXnY/ESwzv5I1stWjM=",
+  "Hash": "mqzxf2OobjW8tceoop1JCT/4GthOUJDeLn6rrIjbWTU=",
   "Source": "Tarea3",
   "BasePath": "_content/Tarea3",
   "Mode": "Default",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\advertencia.png"
+    },
+    {
+      "Identity": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\images\\Mifoto.jpeg",
+      "SourceId": "Tarea3",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\",
+      "BasePath": "_content/Tarea3",
+      "RelativePath": "images/Mifoto.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Mifoto.jpeg"
     },
     {
       "Identity": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\images\\peligro.png",

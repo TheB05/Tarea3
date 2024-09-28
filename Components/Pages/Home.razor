@@ -1,10 +1,89 @@
 ﻿@page "/"
+@rendermode InteractiveServer
+@inject IJSRuntime JSx
+@using System.Text.Json
 
-<PageTitle>Inicio</PageTitle>
+<PageTitle>IncidenteYa</PageTitle>
 
 <center>
-<h3>Bienvenido a IncidenteYa</h3>
-<b>
-<p>En esta página encontrarás un dashboard de los accidentes activos y podrás registar accidentes de tráfico.</p>
-</b>
+<div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <b>
+                    <h3>IncidenteYa</h3>
+                    <p class="font-weight-bold">En esta página encontrarás un dashboard de los accidentes activos y podrás registrar accidentes de tráfico.</p>
+                </b>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <div class="card text-white" style="background: linear-gradient(to right, #007bff, #6610f2);">
+                    <div class="card-body">
+                        <h5 class="card-title">Casos Registrados</h5>
+                        <p class="card-text display-4">@Registers.Count</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card text-white" style="background: linear-gradient(to right, #17a2b8, #4dd0e1);">
+                    <div class="card-body">
+                        <h5 class="card-title">Vehículos Involucrados</h5>
+                        <p class="card-text display-4">@Registers.Sum(r => r.VehiculosInvolucrados)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card text-white" style="background: linear-gradient(to right, #dc3545, #ff6b6b);">
+                    <div class="card-body">
+                        <h5 class="card-title">Muertos</h5>
+                        <p class="card-text display-4">@Registers.Sum(r => r.Muertos)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card text-white" style="background: linear-gradient(to right, #ffc107, #ffeb3b);">
+                    <div class="card-body">
+                        <h5 class="card-title">Heridos</h5>
+                        <p class="card-text display-4">@Registers.Sum(r => r.Heridos)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <div class="card text-white" style="background: linear-gradient(to right, #28a745, #4caf50);">
+                    <div class="card-body">
+                        <h5 class="card-title">Costos Estimados</h5>
+                        <p class="card-text display-6"><LabelMoney Valor="@Registers.Sum(r => r.CostoEstimado)" /></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
 </center>
+@code {
+    List<Reporte> Registers = new List<Reporte>();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var RegistersJson = await JSx.InvokeAsync<string>("localStorage.getItem", "Registers");
+
+            if (RegistersJson != null)
+            {
+                Registers = JsonSerializer.Deserialize<List<Reporte>>(RegistersJson);
+
+                    StateHasChanged();
+            }
+        }
+    }
+}

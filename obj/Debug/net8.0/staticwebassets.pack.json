@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
+      "Id": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\images\\Mifoto.jpeg",
+      "PackagePath": "staticwebassets\\images\\Mifoto.jpeg"
+    },
+    {
       "Id": "C:\\Web\\Tarea_Web3\\Tarea3\\wwwroot\\images\\advertencia.png",
       "PackagePath": "staticwebassets\\images\\advertencia.png"
     },
